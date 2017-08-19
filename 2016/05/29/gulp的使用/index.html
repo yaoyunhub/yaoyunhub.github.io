@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>gulp的使用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="gulp是一个自动化的构建工具，可以帮助我们简化日常的繁琐的工作（js代码压缩，less sass文件转换，代码合并！）  示例  12345678var gulp = require(&apos;gulp&apos;);var uglify = require(&apos;gulp-uglify&apos;); gulp.task(&quot;yasuojs&quot;, function () &amp;#123;    gulp.src([&quot;./js/**/">
+<meta name="keywords" content="工具,gulp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp的使用">
+<meta property="og:url" content="http://yoursite.com/2016/05/29/gulp的使用/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="gulp是一个自动化的构建工具，可以帮助我们简化日常的繁琐的工作（js代码压缩，less sass文件转换，代码合并！）  示例  12345678var gulp = require(&apos;gulp&apos;);var uglify = require(&apos;gulp-uglify&apos;); gulp.task(&quot;yasuojs&quot;, function () &amp;#123;    gulp.src([&quot;./js/**/">
+<meta property="og:updated_time" content="2017-08-01T00:59:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gulp的使用">
+<meta name="twitter:description" content="gulp是一个自动化的构建工具，可以帮助我们简化日常的繁琐的工作（js代码压缩，less sass文件转换，代码合并！）  示例  12345678var gulp = require(&apos;gulp&apos;);var uglify = require(&apos;gulp-uglify&apos;); gulp.task(&quot;yasuojs&quot;, function () &amp;#123;    gulp.src([&quot;./js/**/">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-gulp的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/29/gulp的使用/" class="article-date">
+  <time datetime="2016-05-29T10:39:09.000Z" itemprop="datePublished">2016-05-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      gulp的使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>gulp是一个自动化的构建工具，可以帮助我们简化日常的繁琐的工作<br>（js代码压缩，less sass文件转换，代码合并！）</p>
+<blockquote>
+<p>示例</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</div><div class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>); </div><div class="line"></div><div class="line">gulp.task(<span class="string">"yasuojs"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    gulp.src([<span class="string">"./js/**/*.js"</span>, <span class="string">"./js/*.js"</span>])</div><div class="line">   .pipe(uglify())</div><div class="line">   .pipe(gulp.dest(<span class="string">"./dist/js"</span>))</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>1.加载gulp模块！！<br>2.加载压缩js代码的模块<br>3.1 使用gulp.src方法来读取将要进行操作的文件<br>3.2 使用gulp.pipe将文件继续传递到下一个处理方法中<br>3.3 gulp.dest方法用来存储这个文件  方法中传递的参数，是存储文件目录路径<br>3.4  然后在终端中执行任务：gulp yasuojs</p>
+<a id="more"></a>
+<blockquote>
+<p>如何安装、执行</p>
+</blockquote>
+<ol>
+<li><p>安装全局的gulp-cli</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm install gulp-cli -g</div></pre></td></tr></table></figure>
+</li>
+<li><p>在当前项目中安装gulp所需要的一些包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm install gulp -D</div></pre></td></tr></table></figure>
+</li>
+<li><p>在当前项目中创建一个gulpfile.js文件<br>这个文件中可以书写所有需要让gulp执行的任务！</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">touch gulpfile.js</div></pre></td></tr></table></figure>
+</li>
+<li><p>编辑gulpfile.js 创建任务！<br> 4.1 在gulpfile.js当中引入 gulp</p>
+</li>
+</ol>
+<p>4.2 使用gulp.task方法来创建任务<br>`gulp.task(任务名称, function(){ //任务要执行的内容 })``</p>
+<p>4.3 gulp.src() 方法用来获取文件</p>
+<p>4.4 .pipe() 传递给下一个处理程序</p>
+<p>4.5 .dest() 将处理的结果 存储到指定的文件夹当中</p>
+<ol>
+<li>在命令行中<br>通过  gulp 任务名(task方法创建的任务)<br>启动指定的任务！</li>
+</ol>
+<blockquote>
+<p>watch 方法的说明<br>监视文件的变化，执行一些任务，或者一些特定的操作</p>
+</blockquote>
+<p>监视文件的变化，有变化发生，就执行指定的函数中的内容<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.watch([<span class="string">"./js/*.js"</span>, <span class="string">"./js/**/*.js"</span>], <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="comment">//执行特定操作</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>监视文件变化，有变化发生，就执行指定的任务<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.watch([<span class="string">"要监视的文件路径"</span>], [<span class="string">"要执行的任务名称"</span>]);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>实例：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1. 加载gulp模块！！</span></div><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 加载压缩js代码的模块,这些代码用 cnpm install gulp-uglify -D 来安装插件包</span></div><div class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>); <span class="comment">//js压缩</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> less = <span class="built_in">require</span>(<span class="string">"gulp-less"</span>); <span class="comment">//less</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>);<span class="comment">//代码合并</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> browserSync = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>).create();<span class="comment">//配合 browser-sync 来使用</span></div><div class="line"></div><div class="line"><span class="comment">//2. 创建任务</span></div><div class="line">gulp.task(<span class="string">"yasuojs"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">//2.1 使用gulp.src方法来读取将要进行操作的文件</span></div><div class="line">    gulp.src([<span class="string">"./js/**/*.js"</span>, <span class="string">"./js/*.js"</span>])</div><div class="line"></div><div class="line">    <span class="comment">//2.2 使用gulp.pipe将文件继续传递到下一个处理方法中</span></div><div class="line">    .pipe(uglify())</div><div class="line"></div><div class="line">    <span class="comment">//gulp.dest方法用来存储这个文件  方法中传递的参数，是存储文件目录路径</span></div><div class="line">    .pipe(gulp.dest(<span class="string">"./dist/js"</span>))</div><div class="line">&#125;)</div><div class="line"><span class="comment">// 然后在终端中执行任务：gulp yasuojs</span></div><div class="line"></div><div class="line"><span class="comment">//3. less转换</span></div><div class="line">gulp.task(<span class="string">"less"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    gulp.src(<span class="string">"./less/*.less"</span>)</div><div class="line">    .pipe(less())</div><div class="line">    .pipe(gulp.dest(<span class="string">"./dist/css"</span>))</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//4. 合并文件</span></div><div class="line">gulp.task(<span class="string">"concat"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    gulp.src([<span class="string">"./js/**/*.js"</span>, <span class="string">"./js/*.js"</span>])</div><div class="line">    .pipe(concat(<span class="string">"all.js"</span>))</div><div class="line">    .pipe(uglify())</div><div class="line">    .pipe(gulp.dest(<span class="string">"./dist"</span>))</div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//default任务会在 执行gulp命令 不加任务名称的时候，自动被调用</span></div><div class="line">gulp.task(<span class="string">"default"</span>, [<span class="string">"yasuojs"</span>, <span class="string">"less"</span>, <span class="string">"concat"</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"我是default任务"</span>);</div><div class="line"></div><div class="line">    <span class="comment">//监视文件的变化，有变化发生，就执行指定的函数中的内容</span></div><div class="line">    <span class="comment">// gulp.watch(["./js/*.js", "./js/**/*.js"], function (e) &#123;</span></div><div class="line">       </div><div class="line">    <span class="comment">// &#125;)</span></div><div class="line"></div><div class="line">    <span class="comment">//监视文件变化，有变化发生，就执行指定的任务</span></div><div class="line">    gulp.watch([<span class="string">"./js/*.js"</span>, <span class="string">"./js/**/*.js"</span>], [<span class="string">"yasuojs"</span>]);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line">gulp.task(<span class="string">'browser-sync'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    browserSync.init(&#123;</div><div class="line">        server: &#123;</div><div class="line">            baseDir: <span class="string">"./"</span></div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    gulp.watch(<span class="string">"./*.html"</span>).on(<span class="string">'change'</span>, browserSync.reload);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/29/gulp的使用/" data-id="cj6j6qu2g000jrsl1je17949j" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/24/ajax请求-全局变量/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          ajax请求+全局变量
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/28/browser-sync的使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">browser-sync的使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CKeditor/">CKeditor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FileReader/">FileReader</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser-sync/">browser-sync</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form-validate/">form-validate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uploadify/">uploadify</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/框架/">框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模板引擎/">模板引擎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进度条/">进度条</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/问题/">问题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CKeditor/" style="font-size: 10px;">CKeditor</a> <a href="/tags/FileReader/" style="font-size: 10px;">FileReader</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Javascript/" style="font-size: 12.5px;">Javascript</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/angular/" style="font-size: 12.5px;">angular</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/browser-sync/" style="font-size: 10px;">browser-sync</a> <a href="/tags/form-validate/" style="font-size: 10px;">form-validate</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/uploadify/" style="font-size: 10px;">uploadify</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/插件/" style="font-size: 17.5px;">插件</a> <a href="/tags/框架/" style="font-size: 12.5px;">框架</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/模板引擎/" style="font-size: 10px;">模板引擎</a> <a href="/tags/进度条/" style="font-size: 10px;">进度条</a> <a href="/tags/问题/" style="font-size: 10px;">问题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/11/ejs模板引擎/">ejs模板引擎</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/26/uploadify-上传图片的插件/">uploadify-上传图片的插件</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/24/select与option的关系/">select与option的关系</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/01/webpack/">webpack</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/07/node-js介绍/">node.js介绍</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

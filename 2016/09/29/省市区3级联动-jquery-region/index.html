@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Hexo</title>
+  <title>省市区3级联动-jquery-region | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="jquery-region  1.select必须要有id=”p”,id=”c”,id=”d”,分别放在select上 实现选中江苏省，跳出相应的苏州市……盐城市等，选中南京市，接着可以跳出相应各种区 2.data-id=”select元素的name值”，可以实现，直接选中指定的省市区！即，选中的省市区的option元素上有个selected属性">
+<meta name="keywords" content="插件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="省市区3级联动-jquery-region">
+<meta property="og:url" content="http://yoursite.com/2016/09/29/省市区3级联动-jquery-region/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="jquery-region  1.select必须要有id=”p”,id=”c”,id=”d”,分别放在select上 实现选中江苏省，跳出相应的苏州市……盐城市等，选中南京市，接着可以跳出相应各种区 2.data-id=”select元素的name值”，可以实现，直接选中指定的省市区！即，选中的省市区的option元素上有个selected属性">
+<meta property="og:updated_time" content="2017-07-26T16:12:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="省市区3级联动-jquery-region">
+<meta name="twitter:description" content="jquery-region  1.select必须要有id=”p”,id=”c”,id=”d”,分别放在select上 实现选中江苏省，跳出相应的苏州市……盐城市等，选中南京市，接着可以跳出相应各种区 2.data-id=”select元素的name值”，可以实现，直接选中指定的省市区！即，选中的省市区的option元素上有个selected属性">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,225 +64,70 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/11/ejs模板引擎/" class="archive-article-date">
-  <time datetime="2017-08-11T01:46:18.000Z" itemprop="datePublished">Aug 11</time>
+        <section id="main"><article id="post-省市区3级联动-jquery-region" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/29/省市区3级联动-jquery-region/" class="article-date">
+  <time datetime="2016-09-29T15:55:07.000Z" itemprop="datePublished">2016-09-29</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/11/ejs模板引擎/">ejs模板引擎</a>
+    <h1 class="article-title" itemprop="name">
+      省市区3级联动-jquery-region
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> jquery-region</p>
+<blockquote>
+<p>1.select必须要有id=”p”,id=”c”,id=”d”,分别放在select上<br> 实现选中江苏省，跳出相应的苏州市……盐城市等，选中南京市，接着可以跳出相应各种区</p>
+<p>2.data-id=”select元素的name值”，可以实现，直接选中指定的省市区！即，选中的省市区的option元素上有个selected属性</p>
+</blockquote>
+<a id="more"></a>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-5"</span> <span class="attr">id</span>=<span class="string">"region"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"tc_province"</span> <span class="attr">id</span>=<span class="string">"p"</span> <span class="attr">data-id</span>=<span class="string">"&#123;&#123;tc_province&#125;&#125;"</span> <span class="attr">class</span>=<span class="string">"form-control input-sm"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>请选择省<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"tc_city"</span> <span class="attr">id</span>=<span class="string">"c"</span> <span class="attr">data-id</span>=<span class="string">"&#123;&#123;tc_city&#125;&#125;"</span> <span class="attr">class</span>=<span class="string">"form-control input-sm"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>请选择市<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"tc_district"</span> <span class="attr">id</span>=<span class="string">"d"</span> <span class="attr">data-id</span>=<span class="string">"&#123;&#123;tc_district&#125;&#125;"</span> <span class="attr">class</span>=<span class="string">"form-control input-sm"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>请选择区县<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"3个select的父元素"</span>).region(&#123;</div><div class="line">    url: <span class="string">"json文件的地址"</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">// select必须要有id  p c d</span></div><div class="line"><span class="comment">// data-id 可以直接选中指定的省市区！</span></div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/29/省市区3级联动-jquery-region/" data-id="cj6j6qu5y001irsl1qlzmjf1z" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/06/template模板引擎/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          template模板引擎
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/26/CKeditor/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">CKeditor富文本插件</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/26/uploadify-上传图片的插件/" class="archive-article-date">
-  <time datetime="2017-07-26T01:22:16.000Z" itemprop="datePublished">Jul 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/26/uploadify-上传图片的插件/">uploadify-上传图片的插件</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/24/select与option的关系/" class="archive-article-date">
-  <time datetime="2017-07-24T11:23:32.000Z" itemprop="datePublished">Jul 24</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/24/select与option的关系/">select与option的关系</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/12/01/webpack/" class="archive-article-date">
-  <time datetime="2016-12-01T10:51:06.000Z" itemprop="datePublished">Dec 1</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/01/webpack/">webpack</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/07/node-js介绍/" class="archive-article-date">
-  <time datetime="2016-10-07T06:02:46.000Z" itemprop="datePublished">Oct 7</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/07/node-js介绍/">node.js介绍</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/06/template模板引擎/" class="archive-article-date">
-  <time datetime="2016-10-06T11:02:41.000Z" itemprop="datePublished">Oct 6</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/06/template模板引擎/">template模板引擎</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/29/省市区3级联动-jquery-region/" class="archive-article-date">
-  <time datetime="2016-09-29T15:55:07.000Z" itemprop="datePublished">Sep 29</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/29/省市区3级联动-jquery-region/">省市区3级联动-jquery-region</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/26/CKeditor/" class="archive-article-date">
-  <time datetime="2016-09-26T01:21:48.000Z" itemprop="datePublished">Sep 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/26/CKeditor/">CKeditor富文本插件</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/26/图片裁切插件-Jcrop使用/" class="archive-article-date">
-  <time datetime="2016-07-26T08:46:06.000Z" itemprop="datePublished">Jul 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/26/图片裁切插件-Jcrop使用/">Jcrop图片裁切插件</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/25/bootstrap使用遇到的问题/" class="archive-article-date">
-  <time datetime="2016-07-25T10:12:18.000Z" itemprop="datePublished">Jul 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/25/bootstrap使用遇到的问题/">bootstrap使用遇到的问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">

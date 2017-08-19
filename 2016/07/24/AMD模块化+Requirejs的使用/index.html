@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>AMD模块化+Requirejs的使用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端模块化模块化说的就是对于js代码的管理！ 将指定功能的内容划分为一个个的模块，这些模块，在使用的时候可以被引用进来！有复用性，并且代码分门别类，容易维护和管理！！ CommonJS  模块化标准      代表就是Node.js (暂不讨论)CommonJS  ，主要用在Node.js当中 AMD 模块化标准Async Module Definition  适用于前端开发代表：Require.">
+<meta name="keywords" content="模块化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AMD模块化+Requirejs的使用">
+<meta property="og:url" content="http://yoursite.com/2016/07/24/AMD模块化+Requirejs的使用/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前端模块化模块化说的就是对于js代码的管理！ 将指定功能的内容划分为一个个的模块，这些模块，在使用的时候可以被引用进来！有复用性，并且代码分门别类，容易维护和管理！！ CommonJS  模块化标准      代表就是Node.js (暂不讨论)CommonJS  ，主要用在Node.js当中 AMD 模块化标准Async Module Definition  适用于前端开发代表：Require.">
+<meta property="og:updated_time" content="2017-07-25T13:06:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AMD模块化+Requirejs的使用">
+<meta name="twitter:description" content="前端模块化模块化说的就是对于js代码的管理！ 将指定功能的内容划分为一个个的模块，这些模块，在使用的时候可以被引用进来！有复用性，并且代码分门别类，容易维护和管理！！ CommonJS  模块化标准      代表就是Node.js (暂不讨论)CommonJS  ，主要用在Node.js当中 AMD 模块化标准Async Module Definition  适用于前端开发代表：Require.">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-AMD模块化+Requirejs的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/24/AMD模块化+Requirejs的使用/" class="article-date">
+  <time datetime="2016-07-24T02:46:51.000Z" itemprop="datePublished">2016-07-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AMD模块化+Requirejs的使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="前端模块化"><a href="#前端模块化" class="headerlink" title="前端模块化"></a>前端模块化</h4><h6 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h6><p>说的就是对于js代码的管理！ 将指定功能的内容划分为一个个的模块，这些模块，在使用的时候可以被引用进来！有复用性，并且代码分门别类，容易维护和管理！！</p>
+<h6 id="CommonJS-模块化标准-代表就是Node-js-暂不讨论"><a href="#CommonJS-模块化标准-代表就是Node-js-暂不讨论" class="headerlink" title="CommonJS  模块化标准      代表就是Node.js (暂不讨论)"></a>CommonJS  模块化标准      代表就是Node.js (暂不讨论)</h6><p>CommonJS  ，主要用在Node.js当中</p>
+<h5 id="AMD-模块化标准"><a href="#AMD-模块化标准" class="headerlink" title="AMD 模块化标准"></a>AMD 模块化标准</h5><p>Async Module Definition  适用于前端开发<br>代表：Require.js，它是帮我们实现前端模块化的工具，他遵循的标准AMD。<br>所有的模块尽可能早的会被加载进来！！<br>  <a id="more"></a></p>
+<blockquote>
+<p>定义模块<br>   requirejs提供了一个全局的函数，define(),来定义模块</p>
+</blockquote>
+<p>   一个模块通常都会单独保存成一个文件<br>      1 最基本的形式<br>        <code>define(funciton(){ 
+            /* 模块自己的代码 */
+        })</code><br>      2 当模块要提供内容给别人使用的时候，需要使用return语句将内容进行返回<br>        <code>define(funciton(){ 
+            /* 模块自己的代码 */
+            return 定义的模块产出的内容
+        })</code><br>      3 当模块依赖于别的模块的时候，需要给当前模块添加依赖项<br>      依赖项如果有返回值，则需要一个形参来接收，下面就可以直接使用<br>            <code>define([&quot;依赖项&quot;, &quot;依赖项&quot;], function(依赖项返回值){
+                /*具体执行代码*/
+                return 产出的内容
+            })</code></p>
+<blockquote>
+<p>引用模块<br>   requirejs提供了一个函数。来引用模块</p>
+</blockquote>
+<p>   <code>require([&quot;模块的名称（不需要.js后缀）&quot;],callback)</code><br>    第二参数是函数: 模块加载完毕之后的回调函数</p>
+<pre><code>+ 如果引用的模块有产出内容，在引用的模块内通过return返回内容，
++ 我们可以通过在回调函数中添加形参，来接收前面的模块的返回内容
++ 形参和模块是一一对应的
+</code></pre><p>  一般情况，会将有返回值的模块，全部放在第一个数组参数里面的前面！ 因为这样可以省略掉后面没有返回值的模块的形参<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>([<span class="string">"./moduleA"</span>], <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">            <span class="comment">// obj.sayHello();</span></div><div class="line">            <span class="comment">// console.log(obj);</span></div><div class="line">        &#125;);</div><div class="line">   </div><div class="line">       <span class="built_in">require</span>([<span class="string">"moduleA"</span>]);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>requirejs中，data-main属性的说明</p>
+</blockquote>
+<ul>
+<li>在请求requirejs的script标签中添加一个data-main属性，指向一个js文件</li>
+<li>当requirejs加载完成之后，会直接去执行这个data-maind属性所指向的js文件的内容</li>
+<li><p>data-main所指的文件是异步加载的！所以如果在下面有依赖于data-main文件中实现的功能的代码，那么，很可能出错</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"require.js"</span> <span class="attr">data-main</span>=<span class="string">"main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">   <span class="built_in">document</span>.getElementById(<span class="string">"txt"</span>).value =  <span class="string">"123"</span>;</span></div><div class="line"><span class="undefined"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"> </div><div class="line">//报错</div></pre></td></tr></table></figure>
+<blockquote>
+<p>模块路径的研究</p>
+<ol>
+<li>当直接使用require来引用一个模块的时候，那么模块的路径会以当前调用require方法的html页面为基础来查找</li>
+<li>如果使用data-main属性，那么路径的查找，会以这个data-main所指的文件为基础来查找！</li>
+<li>如果通过config方法指定了 baseUrl 那么所有的模块查找都会以baseUrl中设置的路径为基础</li>
+</ol>
+<p>注意：</p>
+</blockquote>
+<p> 在设置了baseUrl之后，文件会首先按照baseUrl作为基础去查找，如果找到了，就直接使用，如果没有找到，按照  引用模块的文件本身作为基础再去查找！<br> 模块的应用路径可以写两种（都有效），一种按照baseUrl作为基础来写，另外一种就是按照当前文件路径来写</p>
+<p> <code>require([&quot;./modules/moduleA&quot;]);</code></p>
+</li>
+</ul>
+<h5 id="CMD-模块化标准"><a href="#CMD-模块化标准" class="headerlink" title="CMD 模块化标准"></a>CMD 模块化标准</h5><p>Common Module Definition 适用于前端开发   代表  sea.js</p>
+<p>as lazy as possible<br>只有在需要的时候，才去加载！！</p>
+<p>require.js 没有明显的bug，      sea.js明显没有bug</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/24/AMD模块化+Requirejs的使用/" data-id="cj6j6qtyq0000rsl1hojr02vr" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/24/表单验证插件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          表单验证插件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/24/ajax请求-全局变量/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">ajax请求+全局变量</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CKeditor/">CKeditor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FileReader/">FileReader</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser-sync/">browser-sync</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form-validate/">form-validate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uploadify/">uploadify</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/框架/">框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模板引擎/">模板引擎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进度条/">进度条</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/问题/">问题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CKeditor/" style="font-size: 10px;">CKeditor</a> <a href="/tags/FileReader/" style="font-size: 10px;">FileReader</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Javascript/" style="font-size: 12.5px;">Javascript</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/angular/" style="font-size: 12.5px;">angular</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/browser-sync/" style="font-size: 10px;">browser-sync</a> <a href="/tags/form-validate/" style="font-size: 10px;">form-validate</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/uploadify/" style="font-size: 10px;">uploadify</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/插件/" style="font-size: 17.5px;">插件</a> <a href="/tags/框架/" style="font-size: 12.5px;">框架</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/模板引擎/" style="font-size: 10px;">模板引擎</a> <a href="/tags/进度条/" style="font-size: 10px;">进度条</a> <a href="/tags/问题/" style="font-size: 10px;">问题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/11/ejs模板引擎/">ejs模板引擎</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/26/uploadify-上传图片的插件/">uploadify-上传图片的插件</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/24/select与option的关系/">select与option的关系</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/01/webpack/">webpack</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/07/node-js介绍/">node.js介绍</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

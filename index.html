@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -61,25 +61,33 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-移动端" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ejs模板引擎" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/08/10/移动端/" class="article-date">
-  <time datetime="2017-08-10T13:35:23.414Z" itemprop="datePublished">2017-08-10</time>
+    <a href="/2017/08/11/ejs模板引擎/" class="article-date">
+  <time datetime="2017-08-11T01:46:18.000Z" itemprop="datePublished">2017-08-11</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/11/ejs模板引擎/">ejs模板引擎</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#布局结构</p>
-<p>##flex布局</p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/10/移动端/" data-id="cj67t8fus00005cl1kqp4rk7j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/11/ejs模板引擎/" data-id="cj6j6qu1e000brsl1hzatfr69" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -89,7 +97,448 @@
 
 
   
+    <article id="post-uploadify-上传图片的插件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/26/uploadify-上传图片的插件/" class="article-date">
+  <time datetime="2017-07-26T01:22:16.000Z" itemprop="datePublished">2017-07-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/26/uploadify-上传图片的插件/">uploadify-上传图片的插件</a>
+    </h1>
+  
 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>分为2大类：flash类+h5类</p>
+<blockquote>
+<p>以uploadify举例</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="string">"#file_upload_1"</span>).uploadify(&#123;</div><div class="line">        swf           : <span class="string">'/uploadify/uploadify.swf'</span>,<span class="comment">// 必须要，flash文件</span></div><div class="line">        uploader      : <span class="string">'/uploadify/uploadify.php'</span>,<span class="comment">// 后台接口地址</span></div><div class="line">        fileObjName   : <span class="string">'tc_avatar'</span>, <span class="comment">//后台要求的键值对的键名</span></div><div class="line">        itemTemplate  : <span class="string">'&lt;p&gt;&lt;/p&gt;'</span>,<span class="comment">//上传的进度提示</span></div><div class="line">        buttonText    ：<span class="string">'按钮'</span>,</div><div class="line">        buttonClass   : <span class="string">'active'</span>,<span class="comment">//按钮样式</span></div><div class="line">        formData      : &#123;key = value&#125;, </div><div class="line">        <span class="comment">// 把这个按钮作为form表单提交数据，如果需要额外数据，就用这个属性进行添加数据</span></div><div class="line">        onUploadSuccess     : <span class="function"><span class="keyword">function</span> (<span class="params">file , data ,response </span>) </span>&#123;</div><div class="line">           <span class="comment">//data:就是后台返回的数据，注意：这个是josn格式的字符串，需要data=JSON.parse(data)来转换成对象使用</span></div><div class="line">            $(<span class="string">".preview&gt;img"</span>).attr(<span class="string">"src"</span>, data.result.path);</div><div class="line">        &#125;,</div><div class="line">        </div><div class="line">        width         : <span class="number">120</span>,</div><div class="line">        height        : <span class="number">30</span>,</div><div class="line">        fileSizeLimit : </div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/26/uploadify-上传图片的插件/" data-id="cj6j6qu470010rsl1g5uyuv39" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/uploadify/">uploadify</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-select与option的关系" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/24/select与option的关系/" class="article-date">
+  <time datetime="2017-07-24T11:23:32.000Z" itemprop="datePublished">2017-07-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/24/select与option的关系/">select与option的关系</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/24/select与option的关系/" data-id="cj6j6qu32000lrsl1crk2scwh" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/01/webpack/" class="article-date">
+  <time datetime="2016-12-01T10:51:06.000Z" itemprop="datePublished">2016-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/01/webpack/">webpack</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/01/webpack/" data-id="cj6j6qu3t000wrsl1bkgqjrfg" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node-js介绍" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/07/node-js介绍/" class="article-date">
+  <time datetime="2016-10-07T06:02:46.000Z" itemprop="datePublished">2016-10-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/07/node-js介绍/">node.js介绍</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Node-js介绍"><a href="#Node-js介绍" class="headerlink" title="Node.js介绍"></a>Node.js介绍</h1><h2 id="什么是Node-js"><a href="#什么是Node-js" class="headerlink" title="什么是Node.js?"></a>什么是Node.js?</h2><ul>
+<li>Node.js是一个开发平台，就像Java开发平台、.Net开发平台、PHP开发平台、Apple开发平台一样<ul>
+<li>开发平台：有对应的编程语言、有语言运行时、有能实现特定功能的API（SDK：Software Development Kit）</li>
+</ul>
+</li>
+<li>在这个平台开发所使用的语言是 JavaScript 语言</li>
+<li>在这个开发平台下可以开发控制台程序（CLI）、桌面程序GUI（参见atom编辑器）、Web程序</li>
+<li>Node.js 设计主要是为了开发网络应用程序</li>
+<li>Node.js 底层是通过C/C++语言实现的</li>
+<li>Node.js 内置部分API，通过 NPM 可以使用更多第三方功能模块</li>
+</ul>
+<h2 id="node-js-官方解释"><a href="#node-js-官方解释" class="headerlink" title="node.js 官方解释"></a>node.js 官方解释</h2><ol>
+<li><p>Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine.</p>
+<ul>
+<li>Node.js 是一个基于 Chrome V8 JavaScript 引擎构建的 JavaScript 运行时</li>
+</ul>
+</li>
+<li><p>Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. </p>
+<ul>
+<li>Node.js 使用 事件驱动、非阻塞 I/O 模型，使其更轻量级 和 更高效。</li>
+</ul>
+</li>
+<li><p>Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.</p>
+<ul>
+<li>Node.js 的 包生态系统 npm, 是世界开源库中最大的生态系统。</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><p>Node is designed to build scalable network applications. </p>
+<ul>
+<li>Node 设计就是被用来构建可伸缩的网络应用程序</li>
+</ul>
+</li>
+<li><p>Almost no function in Node directly performs I/O, so the process never blocks. </p>
+<ul>
+<li>几乎在 node 中没有任何一个功能（函数）直接操作 I/O, 所以处理从来不会被阻塞</li>
+</ul>
+</li>
+<li><p>Node is designed without threads(单线程的), doesn’t mean you cannot take advantage of multiple cores in your environment. Child processes（子进程） can be spawned by using our child_process.fork() API.</p>
+<ul>
+<li>Node 设计的是单线程的，但是这并不表示它不能利用多核 CPU 的优势，在 node.js 中可以通过开启子进程的方式使用多核 CPU。</li>
+</ul>
+</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2016/10/07/node-js介绍/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/07/node-js介绍/" data-id="cj6j6qu37000orsl1kstzg4wx" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-template模板引擎" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/06/template模板引擎/" class="article-date">
+  <time datetime="2016-10-06T11:02:41.000Z" itemprop="datePublished">2016-10-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/06/template模板引擎/">template模板引擎</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>使用模板引擎的应用场景：</p>
+</blockquote>
+<p>1、动态ajax请求数据，渲染到页面。<br>2、在页面布局中，存在共性模块和布局，可以提取出公共模板，减少维护的数量。</p>
+<blockquote>
+<p>引用模板引擎的步骤</p>
+</blockquote>
+<p>1、引入模板引擎<br>2、写模板<br>3、调用template函数，传入参数：template(“模板id”，要渲染的数据)<br>4、template函数生成字符串，innerHTML赋值渲染到页面</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/10/06/template模板引擎/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/06/template模板引擎/" data-id="cj6j6qu3o000ursl1dp3x1may" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模板引擎/">模板引擎</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-省市区3级联动-jquery-region" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/29/省市区3级联动-jquery-region/" class="article-date">
+  <time datetime="2016-09-29T15:55:07.000Z" itemprop="datePublished">2016-09-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/29/省市区3级联动-jquery-region/">省市区3级联动-jquery-region</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> jquery-region</p>
+<blockquote>
+<p>1.select必须要有id=”p”,id=”c”,id=”d”,分别放在select上<br> 实现选中江苏省，跳出相应的苏州市……盐城市等，选中南京市，接着可以跳出相应各种区</p>
+<p>2.data-id=”select元素的name值”，可以实现，直接选中指定的省市区！即，选中的省市区的option元素上有个selected属性</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/29/省市区3级联动-jquery-region/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/29/省市区3级联动-jquery-region/" data-id="cj6j6qu5y001irsl1qlzmjf1z" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CKeditor" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/26/CKeditor/" class="article-date">
+  <time datetime="2016-09-26T01:21:48.000Z" itemprop="datePublished">2016-09-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/26/CKeditor/">CKeditor富文本插件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CKEditor</p>
+<blockquote>
+<p>注意点：<br>1.CKEDITOR.replace(“textarea元素的name属性值”,{});<br>2.CKEDITOR.instances[“name属性值”].updateElement();<br>不要忘了写在富文本中的内容，同步更新到textarea中，.updateElement()方法<br>3.textarea元素的value值设置成属性是没有用的<br><code>&lt;textarea name=&quot;textareaName&quot;&gt;我是value的值&lt;/textarea&gt;</code>这样写是正确的</p>
+<p><code>&lt;textarea name=&quot;textareaName&quot; value=&quot;我是value的值&quot;&gt;&lt;/textarea&gt;</code>这样写是错误的！！！</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"tc_introduce"</span>&gt;</span>我是value的值<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"ckeditor.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/26/CKeditor/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/26/CKeditor/" data-id="cj6j6qtz90001rsl1pu7g2dfm" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CKeditor/">CKeditor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-图片裁切插件-Jcrop使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/26/图片裁切插件-Jcrop使用/" class="article-date">
+  <time datetime="2016-07-26T08:46:06.000Z" itemprop="datePublished">2016-07-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/26/图片裁切插件-Jcrop使用/">Jcrop图片裁切插件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Jcrop图片裁切工具，能实现图片裁切预览功能</p>
+<p><img src="图片裁切插件-Jcrop使用/jcrop.png" alt=""></p>
+<p>文档地址：<a href="http://jcrop.org/" target="_blank" rel="external">http://jcrop.org/</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"jcrop.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"1.jpg"</span> <span class="attr">id</span>=<span class="string">"target"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jcrop.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#target"</span>).Jcrop();</div><div class="line">$(<span class="string">"#container"</span>).on(“cropmove cropend”,<span class="function"><span class="keyword">function</span> (<span class="params">e,s,c</span>) </span>&#123;<span class="comment">//c中含有裁切的x,y,w,h的值&#125;)</span></div><div class="line">$(<span class="string">'#target'</span>).Jcrop(&#123;</div><div class="line">  aspectRatio: <span class="number">1</span>,</div><div class="line">  setSelect: [ <span class="number">175</span>, <span class="number">100</span>, <span class="number">400</span>, <span class="number">300</span> ]</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> jcrop_api = <span class="keyword">this</span>;</div><div class="line">  thumbnail = <span class="keyword">this</span>.initComponent(<span class="string">'Thumbnailer'</span>, &#123; <span class="attr">width</span>: <span class="number">130</span>, <span class="attr">height</span>: <span class="number">130</span> &#125;);</div><div class="line"><span class="comment">//这个实现裁切预览的效果</span></div><div class="line">&#125;);</div><div class="line"><span class="comment">//Customize Position and Styling with CSS</span></div><div class="line">.jcrop-thumb &#123;</div><div class="line">  top: <span class="number">15</span>px;</div><div class="line">  right: <span class="number">-20</span>px;</div><div class="line">  border: <span class="number">1</span>px black solid;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/07/26/图片裁切插件-Jcrop使用/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/26/图片裁切插件-Jcrop使用/" data-id="cj6j6qu4w0018rsl1bo0465fv" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-bootstrap使用遇到的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/25/bootstrap使用遇到的问题/" class="article-date">
+  <time datetime="2016-07-25T10:12:18.000Z" itemprop="datePublished">2016-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/25/bootstrap使用遇到的问题/">bootstrap使用遇到的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>点击按钮，弹出模态框—模态框弹出闪退，怎么办？</p>
+</blockquote>
+<p>1.不用JavaScript代码激活模态框。<br>通过在一个起控制器作用的元素（例如：按钮）上添加 data-toggle=”modal” 属性, 通过data-target=”#foo” 属性，再或者 href=”#foo” 属性，用于指向被控制的模态框。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal fade"</span> <span class="attr">id</span>=<span class="string">"teacherModal"</span>&gt;</span></div><div class="line">//………………</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#teacherModal"</span> <span class="attr">data-toggle</span>=<span class="string">"modal"</span> <span class="attr">class</span>=<span class="string">"btn btn-info btn-xs"</span> <span class="attr">id</span>=<span class="string">"check-info"</span>&gt;</span>查 看<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>2.通过JavaScript调用modal，<br>☆☆☆这时要去掉按钮中的data-toggle=”modal”的属性☆☆☆，不然会出现闪退效果（可能是这个原因）<br>通常只需一行代码，即可通过元素的id,模态框的id，调用模态框：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#teacherModal'</span>).modal(options)</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/25/bootstrap使用遇到的问题/" data-id="cj6j6qu22000grsl1ulnodm6k" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/问题/">问题</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -98,15 +547,10 @@
 
   
     
-
-  
-    
-  
-    
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CKeditor/">CKeditor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FileReader/">FileReader</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser-sync/">browser-sync</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form-validate/">form-validate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uploadify/">uploadify</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/框架/">框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模板引擎/">模板引擎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进度条/">进度条</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/问题/">问题</a></li></ul>
     </div>
   </div>
 
@@ -114,12 +558,47 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CKeditor/" style="font-size: 10px;">CKeditor</a> <a href="/tags/FileReader/" style="font-size: 10px;">FileReader</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Javascript/" style="font-size: 12.5px;">Javascript</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/angular/" style="font-size: 12.5px;">angular</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/browser-sync/" style="font-size: 10px;">browser-sync</a> <a href="/tags/form-validate/" style="font-size: 10px;">form-validate</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/uploadify/" style="font-size: 10px;">uploadify</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/插件/" style="font-size: 17.5px;">插件</a> <a href="/tags/框架/" style="font-size: 12.5px;">框架</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/模板引擎/" style="font-size: 10px;">模板引擎</a> <a href="/tags/进度条/" style="font-size: 10px;">进度条</a> <a href="/tags/问题/" style="font-size: 10px;">问题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/08/10/移动端/">(no title)</a>
+            <a href="/2017/08/11/ejs模板引擎/">ejs模板引擎</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/26/uploadify-上传图片的插件/">uploadify-上传图片的插件</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/24/select与option的关系/">select与option的关系</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/01/webpack/">webpack</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/07/node-js介绍/">node.js介绍</a>
           </li>
         
       </ul>
@@ -135,7 +614,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

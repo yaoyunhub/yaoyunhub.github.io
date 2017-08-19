@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Hexo</title>
+  <title>uploadify-上传图片的插件 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="分为2大类：flash类+h5类  以uploadify举例  1234567891011121314151617181920$(function() &amp;#123;    $(&quot;#file_upload_1&quot;).uploadify(&amp;#123;        swf           : &apos;/uploadify/uploadify.swf&apos;,// 必须要，flash文件        uploa">
+<meta name="keywords" content="插件,uploadify">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uploadify-上传图片的插件">
+<meta property="og:url" content="http://yoursite.com/2017/07/26/uploadify-上传图片的插件/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="分为2大类：flash类+h5类  以uploadify举例  1234567891011121314151617181920$(function() &amp;#123;    $(&quot;#file_upload_1&quot;).uploadify(&amp;#123;        swf           : &apos;/uploadify/uploadify.swf&apos;,// 必须要，flash文件        uploa">
+<meta property="og:updated_time" content="2017-08-16T10:41:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="uploadify-上传图片的插件">
+<meta name="twitter:description" content="分为2大类：flash类+h5类  以uploadify举例  1234567891011121314151617181920$(function() &amp;#123;    $(&quot;#file_upload_1&quot;).uploadify(&amp;#123;        swf           : &apos;/uploadify/uploadify.swf&apos;,// 必须要，flash文件        uploa">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,225 +64,68 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/11/ejs模板引擎/" class="archive-article-date">
-  <time datetime="2017-08-11T01:46:18.000Z" itemprop="datePublished">Aug 11</time>
+        <section id="main"><article id="post-uploadify-上传图片的插件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/26/uploadify-上传图片的插件/" class="article-date">
+  <time datetime="2017-07-26T01:22:16.000Z" itemprop="datePublished">2017-07-26</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/11/ejs模板引擎/">ejs模板引擎</a>
+    <h1 class="article-title" itemprop="name">
+      uploadify-上传图片的插件
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>分为2大类：flash类+h5类</p>
+<blockquote>
+<p>以uploadify举例</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="string">"#file_upload_1"</span>).uploadify(&#123;</div><div class="line">        swf           : <span class="string">'/uploadify/uploadify.swf'</span>,<span class="comment">// 必须要，flash文件</span></div><div class="line">        uploader      : <span class="string">'/uploadify/uploadify.php'</span>,<span class="comment">// 后台接口地址</span></div><div class="line">        fileObjName   : <span class="string">'tc_avatar'</span>, <span class="comment">//后台要求的键值对的键名</span></div><div class="line">        itemTemplate  : <span class="string">'&lt;p&gt;&lt;/p&gt;'</span>,<span class="comment">//上传的进度提示</span></div><div class="line">        buttonText    ：<span class="string">'按钮'</span>,</div><div class="line">        buttonClass   : <span class="string">'active'</span>,<span class="comment">//按钮样式</span></div><div class="line">        formData      : &#123;key = value&#125;, </div><div class="line">        <span class="comment">// 把这个按钮作为form表单提交数据，如果需要额外数据，就用这个属性进行添加数据</span></div><div class="line">        onUploadSuccess     : <span class="function"><span class="keyword">function</span> (<span class="params">file , data ,response </span>) </span>&#123;</div><div class="line">           <span class="comment">//data:就是后台返回的数据，注意：这个是josn格式的字符串，需要data=JSON.parse(data)来转换成对象使用</span></div><div class="line">            $(<span class="string">".preview&gt;img"</span>).attr(<span class="string">"src"</span>, data.result.path);</div><div class="line">        &#125;,</div><div class="line">        </div><div class="line">        width         : <span class="number">120</span>,</div><div class="line">        height        : <span class="number">30</span>,</div><div class="line">        fileSizeLimit : </div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/26/uploadify-上传图片的插件/" data-id="cj6j6qu470010rsl1g5uyuv39" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/uploadify/">uploadify</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/11/ejs模板引擎/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          ejs模板引擎
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/24/select与option的关系/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">select与option的关系</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/26/uploadify-上传图片的插件/" class="archive-article-date">
-  <time datetime="2017-07-26T01:22:16.000Z" itemprop="datePublished">Jul 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/26/uploadify-上传图片的插件/">uploadify-上传图片的插件</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/24/select与option的关系/" class="archive-article-date">
-  <time datetime="2017-07-24T11:23:32.000Z" itemprop="datePublished">Jul 24</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/24/select与option的关系/">select与option的关系</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/12/01/webpack/" class="archive-article-date">
-  <time datetime="2016-12-01T10:51:06.000Z" itemprop="datePublished">Dec 1</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/01/webpack/">webpack</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/07/node-js介绍/" class="archive-article-date">
-  <time datetime="2016-10-07T06:02:46.000Z" itemprop="datePublished">Oct 7</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/07/node-js介绍/">node.js介绍</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/06/template模板引擎/" class="archive-article-date">
-  <time datetime="2016-10-06T11:02:41.000Z" itemprop="datePublished">Oct 6</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/06/template模板引擎/">template模板引擎</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/29/省市区3级联动-jquery-region/" class="archive-article-date">
-  <time datetime="2016-09-29T15:55:07.000Z" itemprop="datePublished">Sep 29</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/29/省市区3级联动-jquery-region/">省市区3级联动-jquery-region</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/26/CKeditor/" class="archive-article-date">
-  <time datetime="2016-09-26T01:21:48.000Z" itemprop="datePublished">Sep 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/26/CKeditor/">CKeditor富文本插件</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/26/图片裁切插件-Jcrop使用/" class="archive-article-date">
-  <time datetime="2016-07-26T08:46:06.000Z" itemprop="datePublished">Jul 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/26/图片裁切插件-Jcrop使用/">Jcrop图片裁切插件</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/25/bootstrap使用遇到的问题/" class="archive-article-date">
-  <time datetime="2016-07-25T10:12:18.000Z" itemprop="datePublished">Jul 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/25/bootstrap使用遇到的问题/">bootstrap使用遇到的问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">

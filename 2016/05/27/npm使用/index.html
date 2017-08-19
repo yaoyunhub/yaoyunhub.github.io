@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Hexo</title>
+  <title>gulp的使用 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="npm,Node Package Manager ,node包管理工具,装了Node.js之后，npm会自动安装！ npm 命令  npm init   用来给当前项目初始化一个package.json文件npm init -y 可以快速创建package.json 所有选项都是默认的！！ npm install 包名称@版本号下面的命令，可以下载对应版本的包，并且将包添加到当前项目的依赖项当中">
+<meta name="keywords" content="工具,npm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp的使用">
+<meta property="og:url" content="http://yoursite.com/2016/05/27/npm使用/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="npm,Node Package Manager ,node包管理工具,装了Node.js之后，npm会自动安装！ npm 命令  npm init   用来给当前项目初始化一个package.json文件npm init -y 可以快速创建package.json 所有选项都是默认的！！ npm install 包名称@版本号下面的命令，可以下载对应版本的包，并且将包添加到当前项目的依赖项当中">
+<meta property="og:updated_time" content="2017-07-27T11:39:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="gulp的使用">
+<meta name="twitter:description" content="npm,Node Package Manager ,node包管理工具,装了Node.js之后，npm会自动安装！ npm 命令  npm init   用来给当前项目初始化一个package.json文件npm init -y 可以快速创建package.json 所有选项都是默认的！！ npm install 包名称@版本号下面的命令，可以下载对应版本的包，并且将包添加到当前项目的依赖项当中">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,225 +64,83 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/11/ejs模板引擎/" class="archive-article-date">
-  <time datetime="2017-08-11T01:46:18.000Z" itemprop="datePublished">Aug 11</time>
+        <section id="main"><article id="post-npm使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/27/npm使用/" class="article-date">
+  <time datetime="2016-05-27T10:39:09.000Z" itemprop="datePublished">2016-05-27</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/11/ejs模板引擎/">ejs模板引擎</a>
+    <h1 class="article-title" itemprop="name">
+      gulp的使用
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>npm,Node Package Manager ,node包管理工具,装了Node.js之后，npm会自动安装！</p>
+<p>npm 命令</p>
+</blockquote>
+<p>npm init   用来给当前项目初始化一个package.json文件<br>npm init -y 可以快速创建package.json 所有选项都是默认的！！</p>
+<p>npm install 包名称@版本号<br>下面的命令，可以下载对应版本的包，并且将包添加到当前项目的依赖项当中（package.json文件中的dependences）<br>npm install 包名称@版本号 –save<br>npm install 包名称@版本号 -S   </p>
+<a id="more"></a>
+<p>下面的命令，可以下载对应版本的包，并且将包添加到当前项目的开发依赖项中(package.json文件中的 devDependences)<br>npm install 包名称 –save-dev<br>npm install 包名称 -D</p>
+<p>下面的命令会将包进行全局安装<br>npm install 包名称 -g </p>
+<p>卸载已经安装的包<br>npm uninstall bootstrap</p>
+<p>-S -D 都可以加载写在指令后面 用来删除package.json文件中的内容</p>
+<blockquote>
+<p>npm官网</p>
+</blockquote>
+<p><a href="https://www.npmjs.com" target="_blank" rel="external">www.npmjs.com</a></p>
+<blockquote>
+<p>cnpm 淘宝npm镜像</p>
+</blockquote>
+<p>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+<p>安装了cnpm之后，就完全可以是用cnpm带来npm<br>cnpm和npm的唯一的不同点就在于，npm是从国外服务器下载，cnpm是从国内淘宝服务器下载！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/27/npm使用/" data-id="cj6j6qu3c000qrsl123vsq60r" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/28/browser-sync的使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          browser-sync的使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/02/angular基础2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">angular基础2</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/26/uploadify-上传图片的插件/" class="archive-article-date">
-  <time datetime="2017-07-26T01:22:16.000Z" itemprop="datePublished">Jul 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/26/uploadify-上传图片的插件/">uploadify-上传图片的插件</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/24/select与option的关系/" class="archive-article-date">
-  <time datetime="2017-07-24T11:23:32.000Z" itemprop="datePublished">Jul 24</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/24/select与option的关系/">select与option的关系</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/12/01/webpack/" class="archive-article-date">
-  <time datetime="2016-12-01T10:51:06.000Z" itemprop="datePublished">Dec 1</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/01/webpack/">webpack</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/07/node-js介绍/" class="archive-article-date">
-  <time datetime="2016-10-07T06:02:46.000Z" itemprop="datePublished">Oct 7</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/07/node-js介绍/">node.js介绍</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/06/template模板引擎/" class="archive-article-date">
-  <time datetime="2016-10-06T11:02:41.000Z" itemprop="datePublished">Oct 6</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/06/template模板引擎/">template模板引擎</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/29/省市区3级联动-jquery-region/" class="archive-article-date">
-  <time datetime="2016-09-29T15:55:07.000Z" itemprop="datePublished">Sep 29</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/29/省市区3级联动-jquery-region/">省市区3级联动-jquery-region</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/26/CKeditor/" class="archive-article-date">
-  <time datetime="2016-09-26T01:21:48.000Z" itemprop="datePublished">Sep 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/26/CKeditor/">CKeditor富文本插件</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/26/图片裁切插件-Jcrop使用/" class="archive-article-date">
-  <time datetime="2016-07-26T08:46:06.000Z" itemprop="datePublished">Jul 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/26/图片裁切插件-Jcrop使用/">Jcrop图片裁切插件</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/25/bootstrap使用遇到的问题/" class="archive-article-date">
-  <time datetime="2016-07-25T10:12:18.000Z" itemprop="datePublished">Jul 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/25/bootstrap使用遇到的问题/">bootstrap使用遇到的问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">

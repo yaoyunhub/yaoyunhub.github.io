@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Hexo</title>
+  <title>不同类型的变量的比较 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="[] == ![] 首先，“！”是取反操作，空数组是对象，对象为真，取反之后就为false了。然后，相等运算符的比较有指定的规则，具体请参阅诸如《JavaScript权威指南》或者《JavaScript高级程序设计》等书目。其中有两条指出：  1.如果其中一个值是true，则将其转换为1再进行比较。如果其中一个值是false，则将其转换为0再进行比较。2.如果一个值是对象，另一个值是数字或字符串，">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不同类型的变量的比较">
+<meta property="og:url" content="http://yoursite.com/2015/04/27/[]==![]问题及衍生/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[] == ![] 首先，“！”是取反操作，空数组是对象，对象为真，取反之后就为false了。然后，相等运算符的比较有指定的规则，具体请参阅诸如《JavaScript权威指南》或者《JavaScript高级程序设计》等书目。其中有两条指出：  1.如果其中一个值是true，则将其转换为1再进行比较。如果其中一个值是false，则将其转换为0再进行比较。2.如果一个值是对象，另一个值是数字或字符串，">
+<meta property="og:updated_time" content="2017-07-27T11:54:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="不同类型的变量的比较">
+<meta name="twitter:description" content="[] == ![] 首先，“！”是取反操作，空数组是对象，对象为真，取反之后就为false了。然后，相等运算符的比较有指定的规则，具体请参阅诸如《JavaScript权威指南》或者《JavaScript高级程序设计》等书目。其中有两条指出：  1.如果其中一个值是true，则将其转换为1再进行比较。如果其中一个值是false，则将其转换为0再进行比较。2.如果一个值是对象，另一个值是数字或字符串，">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,225 +64,78 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/11/ejs模板引擎/" class="archive-article-date">
-  <time datetime="2017-08-11T01:46:18.000Z" itemprop="datePublished">Aug 11</time>
+        <section id="main"><article id="post-[]==![]问题及衍生" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/27/[]==![]问题及衍生/" class="article-date">
+  <time datetime="2015-04-27T10:39:09.000Z" itemprop="datePublished">2015-04-27</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/11/ejs模板引擎/">ejs模板引擎</a>
+    <h1 class="article-title" itemprop="name">
+      不同类型的变量的比较
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[] == ![]</p>
+<p>首先，“！”是取反操作，空数组是对象，对象为真，取反之后就为false了。<br>然后，相等运算符的比较有指定的规则，具体请参阅诸如《JavaScript权威指南》或者《JavaScript高级程序设计》等书目。<br>其中有两条指出：</p>
+<blockquote>
+<p>1.如果其中一个值是true，则将其转换为1再进行比较。如果其中一个值是false，则将其转换为0再进行比较。<br>2.如果一个值是对象，另一个值是数字或字符串，则将对象转换为原始值再进行比较。</p>
+</blockquote>
+<a id="more"></a>
+<p>对象通过toString()方法或valueOf()方法转换为原始值。<br>JavaScript语言核心的内置类首先尝试使用valueOf()，再尝试使用toString()除了日期类，日期类只使用toString()方法。<br>那些不是JavaScript语言核心中的对象则通过各自实现中定义的方法转换为原始值。</p>
+<p>有了以上两条作为基础，我们再来看问题。<br>等号右边为布尔值，由第一条可知，它将转换为数字0，也就是数字类型。现在变成了空数组和数字 0 的比较。<br>由第二条可知，空数组会首先调用valueOf()方法，<br>但是这里需要注意的是：现在变成了空数组和数字0的比较。数组、函数和正则表达式调用valueOf()方法后，只返回对象本身。<br>所以，继续调用toString()方法，空数组调用toString()后，众所周知会返回0；<br>于是两边相同。也就是为什么有了后面所示结果的原因了。</p>
+<p>“” == ![] //true<br>1 == ![] // false<br>0 == ![] // true<br>可以一句话概括：<br>任意值与布尔值之间的比较都是数字0和1之间的比较。</p>
+<p>[] == ![]<br>[] == !true  //  ! 操作符的优先级高于 == ，所以先执行 ! 操作[] == false  //  !true 得到的是 false[] == 0  </p>
+<blockquote>
+<p>比较规则1：<br>如果值为true或false，则转成1或0来继续比较[] == 0  </p>
+<p>比较规则2：如果一个值是数字，一个值是字符串，则把字符串转换为数字，再进行比较，””转成数字是 0。最终是执行 0 == 0 ，结果为 true 。</p>
+</blockquote>
+<p>比较规则1：<br>如果值为true或false，则转成1或0来继续比较[] == 0<br>//执行左侧的 [] 的 valueOf 方法，而 [] 是对象，所以 [].valueOf() 返回本身 []”” == 0 //执行左侧的 [] 的 toString 方法，[].toString() 返回 “”0 == 0<br>//比较规则2：如果一个值是数字，一个值是字符串，则把字符串转换为数字，再进行比较，””转成数字是 0。最终是执行 0 == 0 ，结果为 true 。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/27/[]==![]问题及衍生/" data-id="cj6j6qu0l0004rsl1nonjt018" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/05/浏览器基本知识/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          浏览器基本知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/26/正则基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">正则基础</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/26/uploadify-上传图片的插件/" class="archive-article-date">
-  <time datetime="2017-07-26T01:22:16.000Z" itemprop="datePublished">Jul 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/26/uploadify-上传图片的插件/">uploadify-上传图片的插件</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/24/select与option的关系/" class="archive-article-date">
-  <time datetime="2017-07-24T11:23:32.000Z" itemprop="datePublished">Jul 24</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/24/select与option的关系/">select与option的关系</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/12/01/webpack/" class="archive-article-date">
-  <time datetime="2016-12-01T10:51:06.000Z" itemprop="datePublished">Dec 1</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/01/webpack/">webpack</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/07/node-js介绍/" class="archive-article-date">
-  <time datetime="2016-10-07T06:02:46.000Z" itemprop="datePublished">Oct 7</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/07/node-js介绍/">node.js介绍</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/06/template模板引擎/" class="archive-article-date">
-  <time datetime="2016-10-06T11:02:41.000Z" itemprop="datePublished">Oct 6</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/06/template模板引擎/">template模板引擎</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/29/省市区3级联动-jquery-region/" class="archive-article-date">
-  <time datetime="2016-09-29T15:55:07.000Z" itemprop="datePublished">Sep 29</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/29/省市区3级联动-jquery-region/">省市区3级联动-jquery-region</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/26/CKeditor/" class="archive-article-date">
-  <time datetime="2016-09-26T01:21:48.000Z" itemprop="datePublished">Sep 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/26/CKeditor/">CKeditor富文本插件</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/26/图片裁切插件-Jcrop使用/" class="archive-article-date">
-  <time datetime="2016-07-26T08:46:06.000Z" itemprop="datePublished">Jul 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/26/图片裁切插件-Jcrop使用/">Jcrop图片裁切插件</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/25/bootstrap使用遇到的问题/" class="archive-article-date">
-  <time datetime="2016-07-25T10:12:18.000Z" itemprop="datePublished">Jul 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/25/bootstrap使用遇到的问题/">bootstrap使用遇到的问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">

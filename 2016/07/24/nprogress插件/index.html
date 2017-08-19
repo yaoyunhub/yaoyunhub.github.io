@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Hexo</title>
+  <title>nprogress插件-进度条 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="官方网站：http://ricostacruz.com/nprogress/下载地址：https://github.com/rstacruz/nprogress安装依赖于 jQuery (1.8版本及以上)，添加 nprogress.js 和 nprogress.css 到你的项目中。 使用方法NProgress.start() — 显示进度条NProgress.set(0.4) —设置百分比NP">
+<meta name="keywords" content="插件,进度条">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nprogress插件-进度条">
+<meta property="og:url" content="http://yoursite.com/2016/07/24/nprogress插件/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="官方网站：http://ricostacruz.com/nprogress/下载地址：https://github.com/rstacruz/nprogress安装依赖于 jQuery (1.8版本及以上)，添加 nprogress.js 和 nprogress.css 到你的项目中。 使用方法NProgress.start() — 显示进度条NProgress.set(0.4) —设置百分比NP">
+<meta property="og:updated_time" content="2017-07-24T05:08:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="nprogress插件-进度条">
+<meta name="twitter:description" content="官方网站：http://ricostacruz.com/nprogress/下载地址：https://github.com/rstacruz/nprogress安装依赖于 jQuery (1.8版本及以上)，添加 nprogress.js 和 nprogress.css 到你的项目中。 使用方法NProgress.start() — 显示进度条NProgress.set(0.4) —设置百分比NP">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,225 +64,82 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/11/ejs模板引擎/" class="archive-article-date">
-  <time datetime="2017-08-11T01:46:18.000Z" itemprop="datePublished">Aug 11</time>
+        <section id="main"><article id="post-nprogress插件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/24/nprogress插件/" class="article-date">
+  <time datetime="2016-07-24T03:31:51.000Z" itemprop="datePublished">2016-07-24</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/11/ejs模板引擎/">ejs模板引擎</a>
+    <h1 class="article-title" itemprop="name">
+      nprogress插件-进度条
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>官方网站：<a href="http://ricostacruz.com/nprogress/" target="_blank" rel="external">http://ricostacruz.com/nprogress/</a><br>下载地址：<a href="https://github.com/rstacruz/nprogress" target="_blank" rel="external">https://github.com/rstacruz/nprogress</a><br>安装<br>依赖于 jQuery (1.8版本及以上)，添加 nprogress.js 和 nprogress.css 到你的项目中。</p>
+<p>使用方法<br>NProgress.start() — 显示进度条<br>NProgress.set(0.4) —设置百分比<br>NProgress.inc() — 增加一点点<br>NProgress.done() — 完成进度条<br>你也可以…</p>
+<blockquote>
+<p>在js代码一开始的位置，就调用，刷新网页是就可以看到精度条：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NProgress.start()</div><div class="line">NProgress.done()</div></pre></td></tr></table></figure>
+<blockquote>
+<p>添加到你调用 Ajax 的地方！绑定它到 jQuery的ajaxStart 和 ajaxStop 事件上</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ajaxStart(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;NProgress.start()&#125;)</div><div class="line">$(<span class="built_in">document</span>).ajaxStop(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;NProgress.done()&#125;)</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>没有 Turbolinks/Pjax 一样可以制造一个美妙的进度条！把它绑定到<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;NProgress.start()&#125;)</div><div class="line">$(<span class="built_in">window</span>).load(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;NProgress.done()&#125;)</div></pre></td></tr></table></figure></p>
+<p>配置插件<br>通过 minimum 来修改最小百分比。</p>
+<p><code>NProgress.configure({ minimum: 0.1 });</code><br>你可以通过 template 修改标记结构。为了保证进度条正常工作，需要一个包含 role=’bar’ 属性的元素。</p>
+<p>NProgress.configure({<br>  template: “…”<br>});<br>通过 ease(一个 CSS 中的 easing 值) 调整动画设置和速度 speed （毫秒ms）。</p>
+<p>NProgress.configure({ ease: ‘ease’, speed: 500 });<br>想关闭进度条步进？设置 trickle 为 false。</p>
+<p>NProgress.configure({ trickle: false });<br>你可以调整 trickleRate (每次步进增长多少) 和 trickleSpeed (步进间隔，单位毫秒ms).</p>
+<p>NProgress.configure({ trickleRate: 0.02, trickleSpeed: 800 });<br>想禁用进度环？设置 showSpinner 为 false。</p>
+<p>NProgress.configure({ showSpinner: false });<br>NProgress: slim progress bars in JavaScript</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/24/nprogress插件/" data-id="cj6j6qu3j000srsl1et366q7l" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/进度条/">进度条</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/25/bootstrap使用遇到的问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          bootstrap使用遇到的问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/24/表单验证插件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">表单验证插件</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/26/uploadify-上传图片的插件/" class="archive-article-date">
-  <time datetime="2017-07-26T01:22:16.000Z" itemprop="datePublished">Jul 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/26/uploadify-上传图片的插件/">uploadify-上传图片的插件</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/24/select与option的关系/" class="archive-article-date">
-  <time datetime="2017-07-24T11:23:32.000Z" itemprop="datePublished">Jul 24</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/24/select与option的关系/">select与option的关系</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/12/01/webpack/" class="archive-article-date">
-  <time datetime="2016-12-01T10:51:06.000Z" itemprop="datePublished">Dec 1</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/01/webpack/">webpack</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/07/node-js介绍/" class="archive-article-date">
-  <time datetime="2016-10-07T06:02:46.000Z" itemprop="datePublished">Oct 7</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/07/node-js介绍/">node.js介绍</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/06/template模板引擎/" class="archive-article-date">
-  <time datetime="2016-10-06T11:02:41.000Z" itemprop="datePublished">Oct 6</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/06/template模板引擎/">template模板引擎</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/29/省市区3级联动-jquery-region/" class="archive-article-date">
-  <time datetime="2016-09-29T15:55:07.000Z" itemprop="datePublished">Sep 29</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/29/省市区3级联动-jquery-region/">省市区3级联动-jquery-region</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/26/CKeditor/" class="archive-article-date">
-  <time datetime="2016-09-26T01:21:48.000Z" itemprop="datePublished">Sep 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/26/CKeditor/">CKeditor富文本插件</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/26/图片裁切插件-Jcrop使用/" class="archive-article-date">
-  <time datetime="2016-07-26T08:46:06.000Z" itemprop="datePublished">Jul 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/26/图片裁切插件-Jcrop使用/">Jcrop图片裁切插件</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/25/bootstrap使用遇到的问题/" class="archive-article-date">
-  <time datetime="2016-07-25T10:12:18.000Z" itemprop="datePublished">Jul 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/25/bootstrap使用遇到的问题/">bootstrap使用遇到的问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">
